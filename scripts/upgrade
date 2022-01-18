@@ -24,6 +24,7 @@ architecture=$YNH_ARCH
 db_name=$(ynh_app_setting_get --app=$app --key=db_name)
 db_user=$db_name
 db_pwd=$(ynh_app_setting_get --app=$app --key=psqlpwd)
+set_admin=$(ynh_app_setting_get --app=$app --key=set_admin)
 
 #=================================================
 # CHECK VERSION
@@ -50,6 +51,11 @@ ynh_abort_if_errors
 # ENSURE DOWNWARD COMPATIBILITY
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+
+if [ -z "$set_admin" ]; then
+	set_admin="1"
+	ynh_app_setting_set --app=$app --key=set_admin --value=$set_admin
+fi
 
 # Cleaning legacy permissions
 if ynh_legacy_permissions_exists; then

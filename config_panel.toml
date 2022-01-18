@@ -1,0 +1,25 @@
+version = "1.0"
+
+[main]
+name = "Miniflux configuration"
+
+    [main.config]
+    name = "Configuration Options"
+
+        [main.config.set_admin]
+        ask = "Allow admin"
+        type = "boolean"
+        help = "Enable authentication with user/password."
+        bind = "CREATE_ADMIN:__FINALPATH__/__APP__.conf"
+
+        [main.config.admin]
+        ask = "Set admin"
+        type = "user"
+        help = "enter the name of the admin."
+        bind = "ADMIN_USERNAME:__FINALPATH__/__APP__.conf"
+
+        [main.config.password]
+        ask = "Set password"
+        type = "password"
+        help = "Specify password."
+        bind = "password:__FINALPATH__/__APP__.conf"
