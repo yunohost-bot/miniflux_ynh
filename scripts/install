@@ -30,6 +30,7 @@ admin=$YNH_APP_ARG_ADMIN
 app=$YNH_APP_INSTANCE_NAME
 
 set_admin="1"
+invidious_instance=""
 
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
@@ -53,6 +54,7 @@ ynh_app_setting_set --app=$app --key=admin --value=$admin
 ynh_app_setting_set --app=$app --key=password --value=$password
 ynh_app_setting_set --app=$app --key=architecture --value=$architecture
 ynh_app_setting_set --app=$app --key=set_admin --value=$set_admin
+ynh_app_setting_set --app=$app --key=invidious_instance --value=$invidious_instance
 
 #=================================================
 # STANDARD MODIFICATIONS

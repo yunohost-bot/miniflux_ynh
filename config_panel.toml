@@ -15,7 +15,7 @@ name = "Miniflux configuration"
         [main.config.admin]
         ask = "Set admin"
         type = "user"
-        help = "enter the name of the admin."
+        help = "Enter the name of the admin."
         bind = "ADMIN_USERNAME:__FINALPATH__/__APP__.conf"
 
         [main.config.password]
@@ -23,3 +23,9 @@ name = "Miniflux configuration"
         type = "password"
         help = "Specify password."
         bind = "password:__FINALPATH__/__APP__.conf"
+
+        [main.config.invidious_instance]
+        ask = "Set Invidious instance"
+        type = "domain"
+        help = "Set a custom Invidious instance to use."
+        bind = "INVIDIOUS_INSTANCE:__FINALPATH__/__APP__.conf"
